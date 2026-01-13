@@ -18,18 +18,22 @@ app.listen(port,()=> {
 
 let posts = [
     {
+        id: "1a",
         username: "somil",
         content: "I love coding",
     },
     {
+        id: "2a",
         username: "ritik",
         content: "I love coding",
     },
     {
+        id: "3a",
         username: "vivek",
         content: "I love coding",
     },
     {
+        id: "4a",
         username: "krishna",
         content: "I love coding",
     },
@@ -47,5 +51,11 @@ app.get("/posts/new", (req,res) => {
 app.post("/posts", (req,res) => {
     let {username,content} = req.body;
     posts.push({ username, content})
-    res.send("post request working")
+    res.redirect("/posts")
+})
+
+app.get("/posts/:id", (req,res) => {
+    let {id} = req.params
+    console.log(id)
+    res.send("request working")
 })
