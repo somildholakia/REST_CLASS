@@ -2,6 +2,9 @@ const express = require("express");
 const app = express();
 const path = require("path");
 
+const {v4: uuid, v4} = require("uuid");
+
+
 app.use(express.urlencoded({extended: true}));
 app.use(express.json());
 
@@ -18,22 +21,22 @@ app.listen(port,()=> {
 
 let posts = [
     {
-        id: "1a",
+        id: uuid(v4),
         username: "somil",
         content: "I love coding",
     },
     {
-        id: "2a",
+        id: uuid(v4),
         username: "ritik",
         content: "I love coding",
     },
     {
-        id: "3a",
+        id: uuid(v4),
         username: "vivek",
         content: "I love coding",
     },
     {
-        id: "4a",
+        id: uuid(v4),
         username: "krishna",
         content: "I love coding",
     },
@@ -50,7 +53,8 @@ app.get("/posts/new", (req,res) => {
 
 app.post("/posts", (req,res) => {
     let {username,content} = req.body;
-    posts.push({ username, content})
+    let id = uuid(v4);
+    posts.push({ id,username, content})
     res.redirect("/posts")
 })
 
