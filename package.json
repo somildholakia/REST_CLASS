@@ -2,14 +2,21 @@
   "name": "rest_class",
   "version": "1.0.0",
   "description": "",
+  "homepage": "https://github.com/somildholakia/REST_CLASS#readme",
+  "bugs": {
+    "url": "https://github.com/somildholakia/REST_CLASS/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/somildholakia/REST_CLASS.git"
+  },
+  "license": "ISC",
+  "author": "Somil",
+  "type": "commonjs",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "type": "commonjs",
   "dependencies": {
     "ejs": "^3.1.10",
     "express": "^5.2.1",
